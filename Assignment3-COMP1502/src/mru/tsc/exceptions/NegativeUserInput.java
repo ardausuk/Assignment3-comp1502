@@ -1,5 +1,9 @@
 package mru.tsc.exceptions;
-
+/**
+ * Checks user inputs if negative number is input
+ * @author ardausuk and Rajan Bhullar
+ *
+ */
 public class NegativeUserInput extends Exception {
 	
 	public NegativeUserInput()

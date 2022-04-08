@@ -12,12 +12,20 @@ import mru.tsc.model.Figure;
 import mru.tsc.model.Puzzle;
 import mru.tsc.model.Toy;
 import mru.tsc.view.Controller;
+/**
+ * StoreController class
+ * @author ardausuk and Rajan Bhullar
+ *
+ */
 
 public class StoreController {
 	StoreController CONT;
 	
 
-
+/**
+ * Store controller controls the GUI store
+ * @throws Exception is thrown
+ */
 	public StoreController() throws Exception {
 		loadData();
 	}
@@ -25,7 +33,10 @@ public class StoreController {
 	Scanner input = new Scanner(System.in); 
 	ArrayList<Toy> toys = new ArrayList<>(); 
 
-	
+	/**
+	 * loads data from file
+	 * @throws Exception throws exception
+	 */
 	public void loadData() throws Exception {
 		File db = new File(FILE_PATH);
 		String currentLine;
@@ -74,7 +85,11 @@ public class StoreController {
 		}
 	}
 
-	
+	/**
+	 * Checks type with serial number
+	 * @param SN serial number
+	 * @return returns the type looking for
+	 */
 	public String checkType(char SN) {
 		String Type = null;
 		switch (SN) {
@@ -100,7 +115,12 @@ public class StoreController {
 		return Type;
 	}
 
-
+/**
+ * Checks repeating serial number
+ * @param SN serial number
+ * @return the repeating serial number
+ * @throws Exception throws the exception
+ */
 	public boolean repeatSN(String SN) throws Exception {
 		boolean repeatSN = false;
 		String StoredSN = "0";
@@ -116,7 +136,11 @@ public class StoreController {
 
 	}
 
-
+/**
+ * Serial number search for toy
+ * @param SN serial number
+ * @return toy searched 
+ */
 	public Toy SNSearch(String SN) {
 		Toy toy = null;
 		for (Toy t : toys) {
@@ -128,7 +152,10 @@ public class StoreController {
 		return toy;
 	}
 
-	
+/**
+ * Removes toy
+ * @param SN serial number
+ */
 	public void RemoveToy(String SN) {
 		int i = 0;
 		while (i < toys.size()) {
@@ -140,33 +167,74 @@ public class StoreController {
 		}
 	}
 
-	
+	/**
+	 * Adding the figure
+	 * @param sN serial number
+	 * @param name of the figure
+	 * @param brand of the figure
+	 * @param price of the figure
+	 * @param count number of figures
+	 * @param age of use for figure
+	 * @param type of figure
+	 */
 	public void addFigure(String sN, String name, String brand, double price, int count, int age, String type) {
 		Toy F = new Figure(sN, name, brand, price, count, age, type);
 		toys.add(F);
 	}
 
-
+/**
+ * Adding the animal
+ * @param sN serial number
+ * @param name of the animal
+ * @param brand brand of the animal
+ * @param price of the animal
+ * @param count number of animals
+ * @param age of use for animals
+ * @param material of the animals
+ * @param Size of the animal
+ */
 	public void addAnimal(String sN, String name, String brand, double price, int count, int age, String material,
 			String Size) {
 		Toy A = new Animal(sN, name, brand, price, count, age, material, Size);
 		toys.add(A);
 	}
 
-
+/**
+ * Adding the puzzle
+ * @param SN serial number
+ * @param name of the puzzle
+ * @param brand of the puzzle
+ * @param price of the puzzle
+ * @param count of number of the puzzle
+ * @param age of use for puzzle
+ * @param type of puzzle
+ */
 	public void addPuzzle(String SN, String name, String brand, double price, int count, int age, String type) {
 		Toy P = new Puzzle(SN, name, brand, price, count, age, type);
 		toys.add(P);
 	}
 
-	
+	/**
+	 * adding the board game
+	 * @param sN serial number
+	 * @param name of the board game
+	 * @param brand of the board game
+	 * @param price of the board game
+	 * @param count number of board games
+	 * @param age of use for board games
+	 * @param players number of players for game
+	 * @param designers who designed the board game
+	 */
 	public void addBoardGame(String sN, String name, String brand, double price, int count, int age, String players,
 			String designers) {
 		Toy B = new BoardGame(sN, name, brand, price, count, age, players, designers);
 		toys.add(B);
 	}
 
-	
+	/**
+	 * Saves IO
+	 * @throws IOException throws input output exception
+	 */
 	public void Save() throws IOException {
 		File db = new File(FILE_PATH);
 		PrintWriter pw = new PrintWriter(db);
@@ -193,7 +261,11 @@ public class StoreController {
 
 		pw.close();
 	}
-	
+	/**
+	 * Searching for type
+	 * @param choice user choice
+	 * @return output searched
+	 */
 	public String typeSearching(String choice) {
 		String output = "Matches Found:";
 		int i;
@@ -245,11 +317,18 @@ public class StoreController {
 		}
 		return output;
 	}
-
+/**
+ * Test
+ * @return hello test
+ */
 	public String test() {
 		return "hello";
 	}
-	
+	/**
+	 * toy search
+	 * @param name of toy
+	 * @return output of the search
+	 */
 	public String toySearch(String name) {
 		Toy toy = null;
 		String output = "Matches Found";

@@ -95,7 +95,7 @@
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Button fx:id="Save" layoutX="104.0" layoutY="476.0" mnemonicParsing="false" onAction="#AddToyErrorCheck" prefHeight="25.0" prefWidth="100.0" text="Save" />
+                  <Button fx:id="Save" layoutX="64.0" layoutY="477.0" mnemonicParsing="false" onAction="#AddToyErrorCheck" prefHeight="25.0" prefWidth="100.0" text="Save" />
                   <Label layoutX="416.0" layoutY="55.0" text="Figure">
                      <font>
                         <Font size="24.0" />
@@ -137,7 +137,7 @@
                   <Line endX="100.0" layoutX="453.0" layoutY="354.0" startX="-100.0" />
                   <Line endX="100.0" layoutX="712.0" layoutY="101.0" startX="-100.0" />
                   <Line endX="100.0" layoutX="712.0" layoutY="354.0" startX="-100.0" />
-                  <TextArea fx:id="ErrorOutput" layoutX="264.0" layoutY="469.0" prefHeight="14.0" prefWidth="26.0" />
+                  <TextArea fx:id="ErrorOutput" layoutX="180.0" layoutY="469.0" prefHeight="41.0" prefWidth="128.0" />
                </children></AnchorPane>
       </content>
     </Tab>
