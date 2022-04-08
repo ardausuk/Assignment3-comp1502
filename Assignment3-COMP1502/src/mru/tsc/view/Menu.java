@@ -8,7 +8,11 @@ import mru.tsc.exceptions.PlayerException;
 import mru.tsc.exceptions.NegativeUserInput;
 import mru.tsc.model.Toy;
 
-
+/**
+ * Store controller class that has parts from assignment 2 already commented
+ * @author ardausuk and Rajan Bhullar
+ *
+ */
 public class Menu extends StoreController {
 	private final String FILE_PATH = "res/toys.txt";
 	static Scanner in = new Scanner(System.in);
@@ -18,7 +22,6 @@ public class Menu extends StoreController {
 	public Menu() throws Exception {
 		startMenu();
 	}
-
 
 	public void startMenu() throws Exception {
 		System.out.println("***********************************");
@@ -50,7 +53,10 @@ public class Menu extends StoreController {
 
 	}
 
-
+/**
+ * removes the toy
+ * @throws Exception throws exception
+ */
 	public void removeToy() throws Exception {
 		String SN = promptSN();
 		Toy t1 = SNSearch(SN);
@@ -66,7 +72,11 @@ public class Menu extends StoreController {
 		startMenu();
 	}
 
-	
+	/**
+	 * Get int serial number
+	 * @param lastOption variable of serial number
+	 * @return input of serial number
+	 */
 	public int getInt(int lastOption) {
 		boolean validint = false;
 		int input = 0;

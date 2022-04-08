@@ -2,12 +2,17 @@ package mru.tsc.view;
 
 import javafx.fxml.FXMLLoader;
 
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import mru.tsc.controller.StoreController;
-
+/**
+ * Loads our created scene
+ * @author ardausuk and Rajan Bhullar
+ *
+ */
 public class myScene {
 	public myScene(Stage primaryStage, StoreController S){
 		try {

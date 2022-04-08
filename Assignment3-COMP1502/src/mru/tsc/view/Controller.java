@@ -25,12 +25,16 @@ import mru.tsc.model.Toy;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
 
-
+/**
+ * Controller class for our scene
+ * @author ardausuk and Rajan Bhullar
+ *
+ */
 
 public class Controller {
 	
 	ObservableList<String> CategoryList = FXCollections.observableArrayList("Animal", "Board Game", "Figure", "Puzzle");
-	
+	//variables for our scene
 	@FXML
 	private RadioButton radioSN;
 	@FXML
